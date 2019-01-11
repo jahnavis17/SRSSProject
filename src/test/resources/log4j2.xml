@@ -2,7 +2,7 @@
 <Configuration status="INFO" strict="true" name="XMLConfigTest"
                packages="org.apache.logging.log4j.test">
   <Properties>
-    <Property name="filename">./src/test/java/com/SRSS/Logger/SRSStest.log</Property>
+    <Property name="filename">target/SRSStest.log</Property>
   </Properties>
   <Filter type="ThresholdFilter" level="trace"/>
  
