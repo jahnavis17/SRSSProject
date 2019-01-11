@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sample Test Suite"> <!-- Test Suite Name -->
+  <test name="Sample Test"> <!-- Test Case Name -->
+    <classes>
+      <class name="com.SRSS.SRSSTestNGTest"/> <!-- .class file names in "Sample Test" TestCase -->
+    </classes>
+  </test>
+</suite>
