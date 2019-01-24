@@ -2,13 +2,13 @@
 <Configuration status="INFO" strict="true" name="XMLConfigTest"
                packages="org.apache.logging.log4j.test">
   <Properties>
-    <Property name="filename">target/SRSStest.log</Property>
+    <Property name="filename">target/test.log</Property>
   </Properties>
   <Filter type="ThresholdFilter" level="trace"/>
  
   <Appenders>
     <Appender type="Console" name="STDOUT">
-      <Layout type="PatternLayout" pattern="%5p [%t] (%F:%L) - %m%n"/>
+      <Layout type="PatternLayout" pattern="%m MDC%X%n"/>
       <Filters>
         <Filter type="MarkerFilter" marker="FLOW" onMatch="DENY" onMismatch="NEUTRAL"/>
         <Filter type="MarkerFilter" marker="EXCEPTION" onMatch="DENY" onMismatch="ACCEPT"/>
@@ -23,11 +23,11 @@
     </Appender>
     <Appender type="File" name="File" fileName="${filename}">
       <Layout type="PatternLayout">
-        <Pattern>%d - %c - %p - %m%n</Pattern>
+        <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
       </Layout>
     </Appender>
   </Appenders>
-  
+ 
   <Loggers>
     <Logger name="org.apache.logging.log4j.test1" level="info" additivity="false">
       <Filter type="ThreadContextMapFilter">

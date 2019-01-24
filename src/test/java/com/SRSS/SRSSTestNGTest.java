@@ -32,7 +32,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+//import org.apache.log4j.Logger;
 import org.apache.logging.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.logging.log4j.LogManager;
 
@@ -77,7 +79,9 @@ public class SRSSTestNGTest
 		//p = new Properties();
 		//p.load(fis);
 		//log = Logger.getLogger("rootLogger");
-		//DOMConfigurator.configure("./src/test/java/resources/log4j2.xml");
+		//DOMConfigurator.configure("./src/test/java/log4j2.xml");
+		//PropertyConfigurator.configure("./src/test/java/log4j2.xml"); 
+		
 	    wd.get("http:srssprojects.in");
 		wd.manage().window().maximize();
 		wd.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
